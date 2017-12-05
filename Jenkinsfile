@@ -16,10 +16,11 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        post { 
-            success { 
-                echo 'I will always say Hello again!'
-            }
-	}
     }
+    post {
+        success {
+            echo 'I will always say Hello again!'
+        }
+    }
+
 }
