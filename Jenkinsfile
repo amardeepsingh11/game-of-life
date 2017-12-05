@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn --version'
-		sh 'mvn -B -U -Dsurefire.useFile=false'
+		sh 'mvn compile -B -U -Dsurefire.useFile=false'
             }
         }
     }
