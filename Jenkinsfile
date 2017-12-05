@@ -7,5 +7,10 @@ pipeline {
 		sh 'mvn compile -B -U -Dsurefire.useFile=false'
             }
         }
+	stage('test') {
+	    steps {
+		sh 'mvn test'
+	    }
+	}
     }
 }
