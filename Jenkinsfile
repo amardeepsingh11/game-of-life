@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn --version'
-		sh 'mvn --install -B -U -Dsurefire.useFile=false'
+		sh 'mvn -B -U -Dsurefire.useFile=false'
             }
         }
     }
