@@ -1,8 +1,8 @@
 pipeline {
     agent none
     stages {
-	agent { node { label 'slave-1' } }
         stage('Build-slave1') {
+	agent { node { label 'slave-1' } }
             steps {
                 echo 'Building..'
 		sh 'mkdir /home/ec2-user/jenkin/slave-1/subdir1'
