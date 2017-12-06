@@ -1,16 +1,27 @@
 pipeline {
-    agent { docker 'maven:3.3.3'}
+    agent { node { label 'slave-1' } }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'mvn --version'
-		sh 'mvn compile -B -U -Dsurefire.useFile=false'
+                echo 'Building..'
+		sh 'mkdir /home/ec2-user/jenkin/slave-1/subdir'
             }
         }
-	stage('test') {
-	    steps {
-		sh 'mvn test'
-	    }
-	}
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
+    post {
+        success {
+            echo 'I will always say Hello again!'
+        }
+    }
+
 }
