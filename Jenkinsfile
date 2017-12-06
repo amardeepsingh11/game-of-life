@@ -2,9 +2,6 @@ pipeline {
     agent none
     stages {
 	stage('Parallel Stage') {
-        when {
-                branch 'master'
-            }
 	    parallel {
                 stage('Build-slave1') {
 	        agent { node { label 'slave-1' } }
