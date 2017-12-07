@@ -7,8 +7,8 @@ pipeline {
 		sh 'mvn --version'
 		sh 'mvn clean install -B -U -Dsurefire.useFile=false'
             }
-        }
-        stage('Build-slave1') {
+        
+        stage('Test-slave1') {
            steps {
                 echo 'installing on i'
             }
