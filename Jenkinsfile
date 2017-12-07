@@ -4,6 +4,7 @@ pipeline {
         stage('Build-slave1') {
 	   steps {
                 echo 'Building..'
+		sh 'mvn --version'
             }
         }
     }
